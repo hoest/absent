@@ -1,0 +1,22 @@
+<head>
+  <title>Aanwezig of afwezig?</title>
+</head>
+
+<body>
+  {{> absent}}
+</body>
+
+<template name="absent">
+  <h1>Aanwezig of afwezig?</h1>
+  {{#each employees}}
+    {{> employee}}
+  {{/each}}
+</template>
+
+<template name="employee">
+  <div class="employee">
+    <input class="checkbox" id="{{_id}}"
+           type="checkbox"{{#unless absent}} checked="checked"{{/unless}} />
+    <label for="{{_id}}">{{name}}</label>
+  </div>
+</template>
